@@ -1,0 +1,30 @@
+<head>
+  <title>meteorapp</title>
+</head>
+
+<body>
+  <h1 style="text-align: center;">Welcome to Meteor!</h1> 
+  <!-- {{ > todos }} -->
+  <!--  {{ > todoss }} -->
+<!--   <br> -->
+{{ > taskform }}
+  {{ #each tasks }} {{ > todos }} {{ /each }}
+
+</body>
+
+<template name="todos">
+  <ul>
+    <li>
+      {{text}}
+      <span>
+        <button id="btndel" data-id="{{_id._str}}">Delete</button>
+      </span>
+    </li>
+  </ul>
+</template>
+<template name="taskform">
+  <form class="myform">
+    <input type="text" name="task">
+    <input type="submit" value="Add Task">
+  </form>
+</template>
